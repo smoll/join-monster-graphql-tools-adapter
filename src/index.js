@@ -1,4 +1,8 @@
-const assert = require('assert')
+function assert(expr, message) {
+  if(!Boolean(expr)) {
+    throw new Error(message || 'unknown assertion error');
+  }
+}
 
 module.exports = function joinMonsterAdapt(schema, jmConfigs) {
   for (let typeName in jmConfigs) {
